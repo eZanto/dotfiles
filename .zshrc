@@ -106,3 +106,4 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # Aliases
 alias nano="micro"
 alias ls="ls -hal --color"
+alias netstat="ss"
