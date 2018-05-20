@@ -1,0 +1,12 @@
+[submodule "awesome/freedesktop"]
+	path = awesome/freedesktop
+	url = https://github.com/lcpz/awesome-freedesktop.git
+[submodule "awesome/cyclefocus"]
+	path = awesome/cyclefocus
+	url = https://github.com/blueyed/awesome-cyclefocus.git
+[submodule "awesome/lain"]
+	path = awesome/lain
+	url = https://github.com/lcpz/lain.git
+[submodule "awesome/sharedtags"]
+	path = awesome/sharedtags
+	url = https://github.com/Drauthius/awesome-sharedtags.git
