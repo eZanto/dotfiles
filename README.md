@@ -51,9 +51,17 @@ Dotfiles
 * apcupsd (power management for APC's UPS units)
 * netcat (provides `nc`)
 
-## Configuration
+## Installation and configuration
+### Pacaur
+
+* `$ gpg --list-keys`
+* `echo keyring /etc/pacman.d/gnupg/pubring.gpg > ~/.gnupg/gpg.conf`
+* Install cower from AUR (pacaur dependency)
+* Install pacaur from AUR
+
 ### GPG Agent
 The GPG Agent is required for Telegram (citation needed).
+
 * `$ md ~/.config/systemd/user/gpg-agent.service.d`
 * `$ ln -s systemd/user/gpg-agent.service.d/custom.conf ~/.config/systemd/user/gpg-agent.service.d/`
 * `$ systemctl --user enable gpg-agent.service`
@@ -66,7 +74,11 @@ The GPG Agent is required for Telegram (citation needed).
 ### SSH Agent
 * `systemctl --user enable ssh-agent.service`
 * `systemctl --user start ssh-agent.service`
+* Generate a new ssh key pair with `$ ssh-keygen`
+* Add to SSH agent with `$ ssh-add ~/.ssh/id_rsa`
 
 ### APCUPSD
 * `# systemctl enable apcupsd`
 * `# systemctl start apcupsd`
+* Edit scripts in `/etc/apcupsd` as needed
+
