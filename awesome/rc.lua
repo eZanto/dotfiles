@@ -69,7 +69,7 @@ run_once({
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-local chosen_theme = "default"
+local chosen_theme = "steamburn"
 local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme)
 beautiful.init(theme_path)
 
@@ -111,11 +111,12 @@ awful.layout.layouts = {
 
 
 local tags = sharedtags({
-    { name = "🌎", layout = awful.layout.suit.max },
-    { name = "📻", layout = awful.layout.suit.max },
-    { name = "💼", layout = awful.layout.suit.floating },
-    { name = "🎮", layout = awful.layout.suit.floating },
-    { name = "🙊", layout = awful.layout.suit.floating },
+    { name = "web", layout = awful.layout.suit.max },
+    { name = "term", layout = awful.layout.suit.max },
+    { name = "docs", layout = awful.layout.suit.floating },
+    { name = "media", layout = awful.layout.suit.floating },
+    { name = "files", layout = awful.layout.suit.floating },
+    { name = "other", layout = awful.layout.suit.floating },
     --{ name = "", screen = 2, layout = awful.layout.suit.floating },
     --{ name = "", screen = 2, layout = awful.layout.floating },
     --{ name = "", screen = 2, layout = awful.layout.floating },
@@ -326,7 +327,7 @@ globalkeys = gears.table.join(
     awful.key({ altkey }, "Print", function() awful.util.spawn("scrot -u -e 'mv $f ~/Pictures/screenshots/'") end),
 
 	-- Color Picker
-	awful.key({ modkey, "Shift" }, "p", function() awful.util.spawn("colorpicker --short --one-shot | xsel -b") end),
+	awful.key({ modkey, "Shift" }, "c", function() awful.util.spawn("colorpicker --short --one-shot | xsel -b") end),
 
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
@@ -424,8 +425,8 @@ globalkeys = gears.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
-
+              {description = "show the menubar", group = "launcher"}),
+	
     -- Brightness Keys
     awful.key({}, "XF86MonBrightnessUp", function()
           awful.util.spawn("acpilight -inc 10", false)
@@ -446,7 +447,7 @@ globalkeys = gears.table.join(
     end),
     awful.key({}, "XF86AudioStop", function()
           awful.util.spawn("playerctl stop", false)
-    end),
+    end)
 )
 
 clientkeys = gears.table.join(
@@ -670,6 +671,6 @@ client.connect_signal("mouse::enter", function(c)
     end
 end)
 
-client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
-client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+--client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+--client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}

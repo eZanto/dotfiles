@@ -52,6 +52,17 @@ Dotfiles
 * netcat (provides `nc`)
 
 ## Installation and configuration
+### Networking
+* Add a file named `20-wired.network` to `/etc/systemd/network` with:
+```
+[Match]
+Name=en*
+
+[Network]
+DHCP=yes
+```
+* Follow [this guide](https://wiki.archlinux.org/index.php/Systemd-networkd#Wireless_adapter) for wireless adapters.
+
 ### Pacaur
 
 * `$ gpg --list-keys`
