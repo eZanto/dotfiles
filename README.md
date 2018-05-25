@@ -95,7 +95,7 @@ Enable this to allow incoming remote connections.
 * `# systemctl start sshd.service`
 
 ### APCUPSD
+* Edit scripts in `/etc/apcupsd` as needed
 * `# systemctl enable apcupsd`
 * `# systemctl start apcupsd`
-* Edit scripts in `/etc/apcupsd` as needed
 
