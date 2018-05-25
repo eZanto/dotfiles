@@ -99,3 +99,7 @@ Enable this to allow incoming remote connections.
 * `# systemctl enable apcupsd`
 * `# systemctl start apcupsd`
 
+### Keyboard (US Altgr-Intl)
+To enable it temporarily:
+* `$ localectl set-x11-keymap us "" altgr-intl`
+To make it permanent, add it to your session init script.
