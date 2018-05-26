@@ -51,6 +51,7 @@ Dotfiles
 * apcupsd (power management for APC's UPS units)
 * netcat (provides `nc`)
 * feh (image viewer)
+* imagemagick (extra image support for feh)
 
 ## Installation and configuration
 ### Networking
