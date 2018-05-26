@@ -50,6 +50,7 @@ Dotfiles
 * tmux
 * apcupsd (power management for APC's UPS units)
 * netcat (provides `nc`)
+* feh (image viewer)
 
 ## Installation and configuration
 ### Networking
